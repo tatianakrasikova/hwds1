@@ -3,7 +3,8 @@ target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
-* e.env
+*hwds/e.env
+
 
 ### STS ###
 .apt_generated
