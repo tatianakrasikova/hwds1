@@ -12,6 +12,7 @@ import ait.hwds.service.interfaces.ArticleService;
 import ait.hwds.service.interfaces.DepartamentService;
 import ait.hwds.service.interfaces.S3StorageService;
 import ait.hwds.service.mapping.ArticleMappingService;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
@@ -30,7 +31,7 @@ public class ArticleServiceImpl implements ArticleService {
 
     public ArticleServiceImpl(ArticleRepository articleRepository,
                               ArticleMappingService articleMappingService,
-                              DepartamentService departamentService,
+                              @Lazy DepartamentService departamentService,
                               S3StorageService s3StorageService) {
         this.articleRepository = articleRepository;
         this.articleMappingService = articleMappingService;
@@ -76,7 +77,7 @@ public class ArticleServiceImpl implements ArticleService {
         articleRepository.deleteById(id);
     }
 
-   
+
 
     @Override
     public List<ArticleDto> getAvailableArticles(LocalDate entryDate, LocalDate departureDate) {
