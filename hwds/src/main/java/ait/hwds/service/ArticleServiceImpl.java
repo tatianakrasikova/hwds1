@@ -78,7 +78,7 @@ public class ArticleServiceImpl implements ArticleService {
         articleRepository.deleteById(id);
     }
 
-   
+
 
     @Override
     public List<ArticleDto> getAvailableArticles(LocalDate entryDate, LocalDate departureDate) {
