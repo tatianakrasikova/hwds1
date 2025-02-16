@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  db:
+    image: postgres:15
+    container_name: postgres_container
+    environment:
+      - POSTGRES_USER=hwds
+      - POSTGRES_PASSWORD=1z2x3c4v5b6n7M
+      - POSTGRES_DB=hwds
+    ports:
+      - "5434:5432"
+    volumes:
+      - ./postgres_data:/var/lib/postgresql/data
+    restart: unless-stopped
