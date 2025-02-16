@@ -12,13 +12,3 @@ services:
     volumes:
       - ./postgres_data:/var/lib/postgresql/data
     restart: unless-stopped
-  app:
-    build:
-      context: .
-      dockerfile: Dockerfile # Укажите путь к вашему Dockerfile, если нужно
-    ports:
-      - "80:80"
-    depends_on:
-      - db
-    environment:
-      - DATABASE_URL=postgres://hwds:1z2x3c4v5b6n7M@db:5432/hwds
